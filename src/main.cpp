@@ -106,6 +106,61 @@ void setup()
   barrido(1);
 }
 
+void capa(int(cap))
+{
+
+  switch (cap)
+  {
+  case 1:
+    digitalWrite(A1, HIGH);
+    digitalWrite(A2, LOW);
+    digitalWrite(A3, LOW);
+    digitalWrite(2, LOW);
+    digitalWrite(3, LOW);
+    digitalWrite(4, LOW);
+    digitalWrite(5, LOW);
+    digitalWrite(6, LOW);
+    digitalWrite(7, LOW);
+    digitalWrite(8, LOW);
+    digitalWrite(9, LOW);
+    digitalWrite(10, LOW);
+    break;
+
+  case 2:
+    digitalWrite(A1, LOW);
+    digitalWrite(A2, HIGH);
+    digitalWrite(A3, LOW);
+    digitalWrite(2, LOW);
+    digitalWrite(3, LOW);
+    digitalWrite(4, LOW);
+    digitalWrite(5, LOW);
+    digitalWrite(6, LOW);
+    digitalWrite(7, LOW);
+    digitalWrite(8, LOW);
+    digitalWrite(9, LOW);
+    digitalWrite(10, LOW);
+    break;
+
+  case 3:
+    digitalWrite(A1, LOW);
+    digitalWrite(A2, LOW);
+    digitalWrite(A3, HIGH);
+    digitalWrite(2, LOW);
+    digitalWrite(3, LOW);
+    digitalWrite(4, LOW);
+    digitalWrite(5, LOW);
+    digitalWrite(6, LOW);
+    digitalWrite(7, LOW);
+    digitalWrite(8, LOW);
+    digitalWrite(9, LOW);
+    digitalWrite(10, LOW);
+    break;
+
+  default:
+    break;
+  }
+}
+
 void columna(int(col))
 {
   switch (col)
@@ -264,6 +319,14 @@ void vuelta_columna(int espera)
 
 void loop()
 {
+  capa(1);
+  delay(250);
+  capa(2);
+  delay(250);
+  capa(3);
+  delay(250);
+  capa(2);
+  delay(250);
 
   vuelta_columna(250);
 
@@ -273,10 +336,11 @@ void loop()
   }
 
   columna(5);
-  delay(5);
+  delay(15);
 
   for (size_t i = 20; i > 0; i--)
   {
     todos(i);
   }
+    
 }

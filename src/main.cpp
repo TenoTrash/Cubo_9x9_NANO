@@ -327,6 +327,8 @@ void loop()
   delay(250);
   capa(2);
   delay(250);
+  capa(1);
+  delay(250);
 
   vuelta_columna(250);
 
@@ -336,7 +338,7 @@ void loop()
   }
 
   columna(5);
-  delay(15);
+  delay(150);
 
   for (size_t i = 20; i > 0; i--)
   {

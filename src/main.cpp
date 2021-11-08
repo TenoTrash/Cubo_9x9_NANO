@@ -1,5 +1,47 @@
 #include <Arduino.h>
 
+void barrido(int(tiempo))
+{
+  digitalWrite(A1, LOW);
+  digitalWrite(A2, LOW);
+  digitalWrite(A3, HIGH);
+  for (int a = 2; a < 11; a++)
+  {
+    {
+      digitalWrite(a, LOW);
+      delayMicroseconds(tiempo);
+      digitalWrite(a, HIGH);
+      delayMicroseconds(tiempo);
+    }
+  }
+
+  digitalWrite(A1, LOW);
+  digitalWrite(A2, HIGH);
+  digitalWrite(A3, LOW);
+  for (int a = 2; a < 11; a++)
+  {
+    {
+      digitalWrite(a, LOW);
+      delayMicroseconds(tiempo);
+      digitalWrite(a, HIGH);
+      delayMicroseconds(tiempo);
+    }
+  }
+
+  digitalWrite(A1, HIGH);
+  digitalWrite(A2, LOW);
+  digitalWrite(A3, LOW);
+  for (int a = 2; a < 11; a++)
+  {
+    {
+      digitalWrite(a, LOW);
+      delayMicroseconds(tiempo);
+      digitalWrite(a, HIGH);
+      delayMicroseconds(tiempo);
+    }
+  }
+}
+
 void todos(int(tiempo))
 {
   digitalWrite(A1, LOW);
@@ -61,7 +103,7 @@ void setup()
   pinMode(A2, OUTPUT);
   pinMode(A3, OUTPUT);
 
-  todos(1);
+  barrido(1);
 }
 
 void columna(int(col))
